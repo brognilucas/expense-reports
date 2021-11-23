@@ -1,5 +1,6 @@
-import { Expense } from '../model/Expense';
 import { getConnection } from '../db/connect';
+import { getExpenses } from '../services/get-expenses';
+import { makeOptions } from '../utils/makeOptions';
 import { Router } from 'express';
 
 export const router = Router();
@@ -7,7 +8,7 @@ export const router = Router();
 getConnection();
 
 router.get('/', async (req, res) => {
-  const expenses = await Expense.find();
-
-  return res.send(expenses);
+  const options = makeOptions(req.query);
+  const response = await getExpenses(options);
+  return res.send(response);
 });

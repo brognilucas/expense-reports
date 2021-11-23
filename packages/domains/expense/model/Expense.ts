@@ -22,5 +22,4 @@ export class Expense extends BaseEntity {
 
     @Column()
     status: string;
-
 }
