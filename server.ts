@@ -1,10 +1,11 @@
+/* eslint-disable sort-imports */
 import config from 'config';
 import context from './middleware/context';
 import gracefulShutdown from '@nc/utils/graceful-shutdown';
 import helmet from 'helmet';
 import Logger from '@nc/utils/logging';
 import security from './middleware/security';
-// eslint-disable-next-line sort-imports
+import { getConnection } from '@nc/utils/connect';
 import { router as expenseRoutes } from '@nc/domain-expense';
 import { router as userRoutes } from '@nc/domain-user';
 
@@ -44,6 +45,8 @@ app.get(
 
 app.use(context);
 app.use(security);
+
+getConnection();
 
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
