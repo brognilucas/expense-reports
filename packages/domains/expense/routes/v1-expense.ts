@@ -1,11 +1,11 @@
-import { getConnection } from '../db/connect';
+// import { getConnection } from '../db/connect';
 import { getExpenses } from '../services/get-expenses';
 import { makeOptions } from '../utils/makeOptions';
 import { Router } from 'express';
 
 export const router = Router();
 
-getConnection();
+// getConnection();
 
 router.get('/', async (req, res) => {
   const options = makeOptions(req.query);
