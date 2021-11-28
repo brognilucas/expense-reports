@@ -56,3 +56,18 @@ The command above will run the following test suites sequentially:
 
 
 Happy hacking 😁!
+
+
+
+## Resolution 
+
+
+### Thought line 
+In order to resolve the problem, I thought about how could I improve the existent codebase in order to make it easier to maintain in the future and how that'd be positive in the domain I would work. 
+
+### Solution 
+
+In order to make it easier to create the queries and maintain the software in the future, I've decided to create the Expenses domain using an ORM and so I was started looking for some options in the market. 
+The one that was chosen was TypeORM as its support with Typescript looks impressive. 
+
+With that, I've then created it only inside the Expenses domain using pagination and filtering and after the Expense domain was working as expected I've refactored the User domain to use it as well. In the end, I just moved all dependencies of typeorm inside the util package, so in this way, we didn't need to have to worry about the installation in different packages. 
