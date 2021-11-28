@@ -1,4 +1,5 @@
 interface ConfigDefinition {
+    auth: any;
     host: string
     port: number
     https: {

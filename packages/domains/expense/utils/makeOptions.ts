@@ -1,4 +1,4 @@
-import { IOptions } from '../model/IOptions';
+import { IOptions } from '../interfaces/IOptions';
 import { Like } from 'typeorm';
 
 export function makeOptions(query: unknown): IOptions {

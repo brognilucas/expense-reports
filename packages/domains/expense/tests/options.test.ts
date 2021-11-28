@@ -13,10 +13,8 @@ describe('Expense Options Unit', () => {
 
     const options = makeOptions(query);
 
-    expect(options).toEqual({
-      merchant_name: query.merchantName,
-      status: query.status,
-      user_id: query.userId,
-    });
+    expect(Object.keys(options.filter)).toEqual([
+      'merchant_name', 'status', 'user_id',
+    ]);
   });
 });

@@ -5,7 +5,6 @@
   "private": true,
   "dependencies": {
     "@nc/utils": "^0.0.0",
-    "express": "^4.17.0",
-    "typeorm": "^0.2.41"
+    "express": "^4.17.0"
   }
 }

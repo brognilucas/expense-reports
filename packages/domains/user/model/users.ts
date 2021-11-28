@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import orm from '@nc/utils/db';
+const { BaseEntity, Column, Entity, PrimaryGeneratedColumn } = orm;
 
 @Entity({ name: 'users' })
 export class Users extends BaseEntity {

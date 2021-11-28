@@ -23,4 +23,7 @@ module.exports = {
     appKill: 1000,
     serverClose: 100,
   },
+  auth: {
+
+  },
 };

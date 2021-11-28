@@ -45,9 +45,6 @@ app.get(
 
 app.use(context);
 app.use(security);
-
-getConnection();
-
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
@@ -56,7 +53,9 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-server.listen(config.port, () => {
+server.listen(config.port, async () => {
+  await getConnection();
+
   server.ready = true;
   logger.log(`Server started on port ${config.port}`);
 });
