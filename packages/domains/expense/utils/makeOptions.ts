@@ -1,4 +1,5 @@
 import { IOptions } from '../interfaces/IOptions';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Like } from 'typeorm';
 
 export function makeOptions(query: unknown): IOptions {
@@ -8,7 +9,7 @@ export function makeOptions(query: unknown): IOptions {
   };
 }
 
-function makePagination(query): IOptions['pagination'] {
+function makePagination(query: any): IOptions['pagination'] {
   const page = query.page || 1;
   const limit = query.limit || 10;
   return {
@@ -18,8 +19,8 @@ function makePagination(query): IOptions['pagination'] {
   };
 }
 
-function makeFilters(query): IOptions['filter'] {
-  const filter = {
+function makeFilters(query: any): IOptions['filter'] {
+  const filter: any = {
     merchant_name: query.merchantName ? Like(`%${query.merchantName}%`) : null,
     status: query.status || null,
     user_id: query.userId || null,
